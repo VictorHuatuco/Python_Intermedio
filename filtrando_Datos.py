@@ -89,9 +89,9 @@ def run():
 
 
     old_people =  list(map(lambda worker: worker | {"old": worker["age"] < 70}, DATA))
-    # old_people_list = [worker | {"old":worker["age"] < 70},
+    old_people_list = [worker | {"old":worker["age"] < 70} for worker in DATA]
 
-    for worker in adults_comprehensions:
+    for worker in  old_people_list:
         print(worker)
 
 if __name__ == '__main__':
