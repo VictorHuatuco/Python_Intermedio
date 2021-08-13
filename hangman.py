@@ -21,7 +21,13 @@ def hangman(word):
     letra_ingresada=''
     while a != 1:
         
+
+
+
+
+        
         os.system("cls")
+
         print("""SELECCIONE UNA LETRA: \n""",res,b,letra_ingresada,word)
         letra_ingresada = input("Ingrese una letra:")
         letra_ingresada = letra_ingresada.strip()
