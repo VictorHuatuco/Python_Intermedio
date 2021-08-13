@@ -1,3 +1,4 @@
+import time
 import os
 import random
 # random.randint(0, 1)
@@ -7,22 +8,34 @@ def read():
         for line in f:
             number.append(line)
     word = random.choice(number)
+    
+
     return word
 
 def hangman(word):
     longitud = int(len(word))
-    res = ["_" for i in range(1, longitud)]
+    res = "_" * longitud
+    
     a = 0
+    b = ""
+    letra_ingresada=''
     while a != 1:
-        os.system("cls")
-        print("""SELECCIONE UNA LETRA: \n""",res)
         
+        os.system("cls")
+        print("""SELECCIONE UNA LETRA: \n""",res,b,letra_ingresada,word)
         letra_ingresada = input("Ingrese una letra:")
+        letra_ingresada = letra_ingresada.strip()
+        print(letra_ingresada,)
         for index, value in enumerate(word):
+        # res = [list(map(lambda letter: letter == letra_ingresada, res))]
+        # [worker["name"] for worker in DATA if worker ["organization"] == "Platzi"]
             if letra_ingresada == value:
-                res[index]=letra_ingresada
+                rplc = word[index]
+                res = res. replace(rplc,letra_ingresada)
+                b = ":)"
             else:
-                res[index]="_"
+                b = ":("
+        
 
 def run():
     os.system("cls")
