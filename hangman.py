@@ -1,7 +1,7 @@
 import time
 import os
 import random
-# random.randint(0, 1)
+################random.randint(0, 1)
 def read():
     number = []
     with open("./archivos/Words.txt","r",encoding="utf-8") as f:
